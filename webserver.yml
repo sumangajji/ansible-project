@@ -37,6 +37,7 @@
      notify: restart apache
 
    - name: de-activate default apache site
+     file: path=/etc/apache2/sites-enabled/000-default.conf state=absent
      notify: restart apache
      
    - name: activate visualapp apache site

@@ -12,10 +12,10 @@
     - name: install mysql-server
       apt: name=mysql-server state=present update_cache=yes
       
-      lineinfile: dest=/etc/mysql/my.cnf regexp=^bind-address line="bind-address=0.0.0.0"
+    - lineinfile: dest=/etc/mysql/my.cnf regexp=^bind-address line="bind-address=0.0.0.0"
       notify: restart mysql
  
-   - name: create visualapp database 
+    - name: create visualapp database 
       mysql_db: name=visualapp state=present 
 
     - name: create visualapp user 
